@@ -1,21 +1,43 @@
 <h1>PRODUCTOS IMPACTO</h1>
 <hr>
+<!-- <app-producto-tarjeta [producto]="obj2" *ngFor="let obj2 of tablets"></app-producto-tarjeta>
+<app-producto-tarjeta [producto]="obj3" *ngFor="let obj3 of printers1"></app-producto-tarjeta>
+<app-producto-tarjeta [producto]="obj4" *ngFor="let obj4 of keyboards"></app-producto-tarjeta>
+<app-producto-tarjeta [producto]="obj5" *ngFor="let obj5 of printers2"></app-producto-tarjeta>
+<app-producto-tarjeta [producto]="obj6" *ngFor="let obj6 of mouses"></app-producto-tarjeta> -->
 
+<div class="row">
+    <div class="col-md-4 mt-2" *ngFor="let obj1 of cpus">
+        <app-producto-tarjeta [producto]="obj1"></app-producto-tarjeta>
+    </div>
 
+    <div class="col-md-4 mt-2" *ngFor="let obj2 of tablets">
+        <app-producto-tarjeta [producto]="obj2"></app-producto-tarjeta>
+    </div>
 
+    <div class="col-md-4 mt-2" *ngFor="let obj3 of printers1">
+        <app-producto-tarjeta [producto]="obj3"></app-producto-tarjeta>
+    </div>
 
-<div class="row row-cols-1 row-cols-md-3">
-    
+    <div class="col-md-4 mt-2" *ngFor="let obj4 of keyboards">
+        <app-producto-tarjeta [producto]="obj4"></app-producto-tarjeta>
+    </div>
 
-    <app-producto-tarjeta [producto]="foo" *ngFor="let foo of productos"></app-producto-tarjeta>
+    <div class="col-md-4 mt-2" *ngFor="let obj5 of printers2">
+        <app-producto-tarjeta [producto]="obj5"></app-producto-tarjeta>
+    </div>
+
+    <div class="col-md-4 mt-2" *ngFor="let obj6 of mouses">
+        <app-producto-tarjeta [producto]="obj6"></app-producto-tarjeta>
+    </div>
 
 </div>
 
-    <div class="row">
-        <div id="bcenter" class="col m-5">
-           <button (click)="verCarrito()" type="button" class="btn btn-primary">Ver mi carrito</button>     
-        </div>
-    </div>
+<div class="row row-cols-1 row-cols-md-3">
+</div>
 
-        
-    
+<div class="row">
+    <div id="bcenter" class="col m-5">
+        <button (click)="verCarrito()" type="button" class="btn btn-primary">Ver mi carrito</button>
+    </div>
+</div>

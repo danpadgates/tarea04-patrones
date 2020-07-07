@@ -8,10 +8,10 @@ import { CarritoComponent } from './components/carrito/carrito.component';
 
 const APP_ROUTES: Routes = [
 
-  { path: 'login', component: LoginComponent },
+  // { path: 'login', component: LoginComponent },
   { path: 'productos', component: ProductosComponent },
   { path: 'carrito', component: CarritoComponent },
-  { path: '**', pathMatch:'full', redirectTo:'login' },
+  { path: '**', pathMatch:'full', redirectTo:'productos' },
 
 ];
 

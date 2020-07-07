@@ -1,24 +1,21 @@
 .container {
-    padding: 2rem 0rem;
-  }
-  
-  h4 {
-    margin: 2rem 0rem 1rem;
-  }
-  
-  .table-image {
-    
-      vertical-align: middle;
-   
-  }
+  padding: 2rem 0rem;
+}
 
-  td, th {
-    vertical-align: middle;
-  }
+h4 {
+  margin: 2rem 0rem 1rem;
+}
 
-  .imgCarrito{
-    border-radius: 50%;
-    object-fit: contain;
-    width: 200px;
-    height: 200px;
-  }
+.table-image {
+  vertical-align: middle;
+}
+
+td, th {
+  vertical-align: middle;
+}
+
+.imgCarrito {
+  object-fit: contain;
+  width: 120px;
+  height: 120px;
+}

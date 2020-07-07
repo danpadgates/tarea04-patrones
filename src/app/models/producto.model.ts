@@ -1,10 +1,9 @@
-
-export class Producto{
-    idx?: number;
-    nombre: String;
-    precio: number;
-    url_imagen: string;
-    tipo: string;
-    };
-
-    
+export class Producto {
+    constructor(
+        public idx: number,
+        public nombre: String,
+        public precio: number,
+        public url_imagen: string,
+        public tipo: string
+    ) { }
+};

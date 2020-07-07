@@ -8,16 +8,16 @@ import { ProductosService } from '../../servicios/productos.service';
   styleUrls: ['./carrito.component.css']
 })
 export class CarritoComponent implements OnInit {
-  
-  
 
-  constructor( private productosservice: ProductosService) { }
+  public carroVenta: Carrito[];
+  public total: number = 0;
+
+  constructor(private productosservice: ProductosService) {
+    this.carroVenta = this.productosservice.getCarrito();
+    this.total = this.productosservice.getPrice();
+  }
 
   ngOnInit(): void {
   }
 
-  carroVenta:Carrito[] = this.productosservice.getCarrito();
-
-  
-  
 }

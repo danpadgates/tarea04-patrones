@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Producto } from '../models/producto.model';
-import { HttpClient } from '@angular/common/http';
 
 import { Carrito } from '../models/carrito.model';
 
@@ -10,49 +9,40 @@ import { Carrito } from '../models/carrito.model';
 
 export class ProductosService {
 
-  private carrito:Carrito[] = [];
+  private carrito: Carrito[] = [];
   private products: Producto[] = [];
-  
-    
 
-  constructor(public http: HttpClient) {
+  constructor() {
+  }
 
-    const SERVICES_URL = 'http://localhost:8080/Semana3';
+  getProductos(): Producto[] {
+    return this.products;
+  }
 
-    const url = SERVICES_URL + '/productos';
-    this.http.get(url)
-        .subscribe((data: Producto[]) => {
-            this.products = data;
-            console.log(this.products);
-            console.log('toy grande');
-        })
-}
-   
+  addCarrito(cant: number, producto: any) {
 
-getProductos(){
+    const carro = {
+      producto,
+      cantidad: cant,
+    };
 
-  const SERVICES_URL = 'http://localhost:8080/Semana3';  
-  const url = SERVICES_URL + '/productos';
-  return this.http.get<Producto[]>(url)
-
-}
-
-addCarrito(cant:number, producto:Producto){
-
-   const carro = {
-     producto,
-     cantidad : cant,
-   };
-    
 
     this.carrito.push(carro);
+  }
 
-    console.log(this.carrito);
-}
+  getCarrito() {
+    return this.carrito;
+  }
 
-getCarrito(){
-  return this.carrito;
-}
+  getPrice():number{
+    let total:number = 0;
+
+    for(let i=0;i<this.carrito.length;i++){
+      total += this.carrito[i].cantidad * this.carrito[i].producto.price;
+    }
+
+    return total;
+  }
 
 }
 

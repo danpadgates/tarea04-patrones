@@ -1,30 +1,34 @@
 <div class="container">
-    <div class="row">
-      <div class="col-12">
-          <table class="table table-image">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Image</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">Precio</th>
-                
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let unidad of carroVenta; index as i" >
-                <th scope="row">{{i+1}}</th>
-                <td class="w-25">
-                    <img src={{unidad.producto.url_imagen}} class="img-fluid img-thumbnail imgCarrito" alt="Sheep">
-                </td>
-                <td>{{unidad.producto.nombre}}</td>
-                <td>{{unidad.cantidad}}</td>
-                <td>{{unidad.cantidad*unidad.producto.precio}}</td>
-               
-              </tr>
-            </tbody>
-          </table>   
-      </div>
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-image">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Image</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let unidad of carroVenta; index as i">
+            <th scope="row">{{i+1}}</th>
+            <td class="w-25">
+              <img src={{unidad.producto.image}} class="img-fluid img-thumbnail imgCarrito" alt="Sheep">
+            </td>
+            <td>{{unidad.producto.name}}</td>
+            <td>{{unidad.cantidad}}</td>
+            <td>S/ {{unidad.cantidad*unidad.producto.price|number:'.2-2'}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-4 mx-auto">
+      <h3>Total: S/ {{total|number:'.2-2'}}</h3>
+    </div>
+  </div>
+</div>
