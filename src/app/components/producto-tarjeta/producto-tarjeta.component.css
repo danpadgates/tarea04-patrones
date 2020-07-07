@@ -1,0 +1,13 @@
+#contain{
+    width: 347px;
+    height: 354px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.imgSize{
+    width: 335px;
+    height: 335px;
+    object-fit: contain;
+  }

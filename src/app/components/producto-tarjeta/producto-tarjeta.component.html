@@ -1,0 +1,20 @@
+<div class="col mb-4">
+  <div class="card animated fadeIn fast">
+
+      <div id="contain" >
+        <img [src]="producto.url_imagen" class="card-img-top imgSize" [alt]="producto.nombre">
+      </div>
+      
+      <div class="card-body">
+        <h5 class="card-title">{{ producto.nombre }}</h5>
+        <p class="card-text">{{ producto.marca }}</p>
+        <p class="card-text"><small class="text-muted">{{ producto.precio }}</small></p>
+        
+      
+        <label >Cantidad</label>
+        <input value="1" style="width:150px" type="number" class="form-control" #cantidad>
+        <button (click)="agregarCarrito(cantidad.value, producto)" type="button" class="btn btn-primary mt-2">Agregar al Carrito</button>
+    
+      </div>
+  </div>
+</div> 

@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+          <table class="table table-image">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Image</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let unidad of carroVenta; index as i" >
+                <th scope="row">{{i+1}}</th>
+                <td class="w-25">
+                    <img src={{unidad.producto.url_imagen}} class="img-fluid img-thumbnail imgCarrito" alt="Sheep">
+                </td>
+                <td>{{unidad.producto.nombre}}</td>
+                <td>{{unidad.cantidad}}</td>
+                <td>{{unidad.cantidad*unidad.producto.precio}}</td>
+               
+              </tr>
+            </tbody>
+          </table>   
+      </div>
+    </div>
+  </div>
